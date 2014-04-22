@@ -17,3 +17,14 @@ Installation & Usage
 For and in depth guide to the installation and usage of BungeeCord you should check the current primary download location. The current link is provided below for your convenience.
 
 <http://www.spigotmc.org/threads/bungeecord.392/>
+
+
+
+
+
+
+About My changes
+----------------
+
+- Changed 1.5.2 opcode to 1.4.7
+- Added Redpower2 package id, so these get handled correctly and the player don't lose connection when using redpower2.
