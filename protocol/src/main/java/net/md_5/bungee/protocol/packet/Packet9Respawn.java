@@ -4,6 +4,8 @@ import io.netty.buffer.ByteBuf;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
+import java.util.logging.Logger;
+
 @ToString
 @EqualsAndHashCode(callSuper = false)
 public class Packet9Respawn extends DefinedPacket
@@ -33,6 +35,7 @@ public class Packet9Respawn extends DefinedPacket
     @Override
     public void read(ByteBuf buf)
     {
+        Logger.getLogger("Test").info("Readed test");
         dimension = buf.readInt();
         difficulty = buf.readByte();
         gameMode = buf.readByte();

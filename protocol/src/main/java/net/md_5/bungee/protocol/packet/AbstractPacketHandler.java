@@ -35,7 +35,7 @@ public abstract class AbstractPacketHandler
     {
     }
 
-    public void handle(PacketCEScoreboardObjective objective) throws Exception
+/*    public void handle(PacketCEScoreboardObjective objective) throws Exception
     {
     }
 
@@ -45,7 +45,7 @@ public abstract class AbstractPacketHandler
 
     public void handle(PacketD0DisplayScoreboard displayScoreboard) throws Exception
     {
-    }
+    }*/
 
     public void handle(PacketD1Team team) throws Exception
     {

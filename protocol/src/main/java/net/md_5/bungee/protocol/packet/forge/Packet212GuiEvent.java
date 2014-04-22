@@ -1,4 +1,4 @@
-package net.md_5.bungee.protocol51.packet.forge;
+package net.md_5.bungee.protocol.packet.forge;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.ByteBufInputStream;

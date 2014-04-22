@@ -31,8 +31,7 @@ import net.md_5.bungee.netty.PipelineUtils;
 import net.md_5.bungee.protocol.Forge;
 import net.md_5.bungee.protocol.packet.DefinedPacket;
 import net.md_5.bungee.protocol.packet.Packet1Login;
-import net.md_5.bungee.protocol.packet.Packet9Respawn;
-import net.md_5.bungee.protocol.packet.PacketCEScoreboardObjective;
+import net.md_5.bungee.protocol.packet.Packet9Respawn;;
 import net.md_5.bungee.protocol.packet.PacketD1Team;
 import net.md_5.bungee.protocol.packet.PacketFAPluginMessage;
 import net.md_5.bungee.protocol.packet.PacketFCEncryptionResponse;
@@ -156,17 +155,6 @@ public class ServerConnector extends PacketHandler
             } else
             {
                 user.getTabList().onServerChange();
-
-                Scoreboard serverScoreboard = user.getServerSentScoreboard();
-                for ( Objective objective : serverScoreboard.getObjectives() )
-                {
-                    user.unsafe().sendPacket( new PacketCEScoreboardObjective( objective.getName(), objective.getValue(), (byte) 1 ) );
-                }
-                for ( Team team : serverScoreboard.getTeams() )
-                {
-                    user.unsafe().sendPacket( new PacketD1Team( team.getName() ) );
-                }
-                serverScoreboard.clear();
 
                 user.sendDimensionSwitch();
 

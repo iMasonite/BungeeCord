@@ -24,9 +24,6 @@ import net.md_5.bungee.netty.ChannelWrapper;
 import net.md_5.bungee.netty.PacketHandler;
 import net.md_5.bungee.protocol.packet.Packet0KeepAlive;
 import net.md_5.bungee.protocol.packet.PacketC9PlayerListItem;
-import net.md_5.bungee.protocol.packet.PacketCEScoreboardObjective;
-import net.md_5.bungee.protocol.packet.PacketCFScoreboardScore;
-import net.md_5.bungee.protocol.packet.PacketD0DisplayScoreboard;
 import net.md_5.bungee.protocol.packet.PacketD1Team;
 import net.md_5.bungee.protocol.packet.PacketFAPluginMessage;
 import net.md_5.bungee.protocol.packet.PacketFFKick;
@@ -93,46 +90,6 @@ public class DownstreamBridge extends PacketHandler
         {
             throw new CancelSendSignal();
         }
-    }
-
-    @Override
-    public void handle(PacketCEScoreboardObjective objective) throws Exception
-    {
-        Scoreboard serverScoreboard = con.getServerSentScoreboard();
-        switch ( objective.getAction() )
-        {
-            case 0:
-                serverScoreboard.addObjective( new Objective( objective.getName(), objective.getText() ) );
-                break;
-            case 1:
-                serverScoreboard.removeObjective( objective.getName() );
-                break;
-        }
-    }
-
-    @Override
-    public void handle(PacketCFScoreboardScore score) throws Exception
-    {
-        Scoreboard serverScoreboard = con.getServerSentScoreboard();
-        switch ( score.getAction() )
-        {
-            case 0:
-                Score s = new Score( score.getItemName(), score.getScoreName(), score.getValue() );
-                serverScoreboard.removeScore( score.getItemName() );
-                serverScoreboard.addScore( s );
-                break;
-            case 1:
-                serverScoreboard.removeScore( score.getItemName() );
-                break;
-        }
-    }
-
-    @Override
-    public void handle(PacketD0DisplayScoreboard displayScoreboard) throws Exception
-    {
-        Scoreboard serverScoreboard = con.getServerSentScoreboard();
-        serverScoreboard.setName( displayScoreboard.getName() );
-        serverScoreboard.setPosition( Position.values()[displayScoreboard.getPosition()] );
     }
 
     @Override

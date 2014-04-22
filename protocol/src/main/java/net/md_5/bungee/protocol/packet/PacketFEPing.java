@@ -2,13 +2,14 @@ package net.md_5.bungee.protocol.packet;
 
 import io.netty.buffer.ByteBuf;
 import lombok.EqualsAndHashCode;
+import lombok.Getter;
 import lombok.ToString;
 
 @ToString
 @EqualsAndHashCode(callSuper = false)
 public class PacketFEPing extends DefinedPacket
 {
-
+    @Getter
     private byte version;
 
     private PacketFEPing()

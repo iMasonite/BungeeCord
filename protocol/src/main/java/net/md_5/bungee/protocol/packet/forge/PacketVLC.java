@@ -1,10 +1,10 @@
-package net.md_5.bungee.protocol51.packet.forge;
+package net.md_5.bungee.protocol.packet.forge;
 
 import io.netty.buffer.ByteBuf;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
-import net.md_5.bungee.protocol51.packet.AbstractPacketHandler;
-import net.md_5.bungee.protocol51.packet.DefinedPacket;
+import net.md_5.bungee.protocol.packet.AbstractPacketHandler;
+import net.md_5.bungee.protocol.packet.DefinedPacket;
 
 import java.io.*;
 

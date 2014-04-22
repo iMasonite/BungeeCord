@@ -1,10 +1,10 @@
-package net.md_5.bungee.protocol51.packet.forge;
+package net.md_5.bungee.protocol.packet.forge;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.ByteBufInputStream;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
-import net.md_5.bungee.protocol51.packet.AbstractPacketHandler;
+import net.md_5.bungee.protocol.packet.AbstractPacketHandler;
 
 import java.io.IOException;
 
@@ -63,10 +63,4 @@ public class Packet211TileDesc extends PacketVLC {
             e.printStackTrace();
         }
     }
-
-    @Override
-    public void handle(AbstractPacketHandler handler) throws Exception {
-        handler.handle( this );
-    }
-
 }

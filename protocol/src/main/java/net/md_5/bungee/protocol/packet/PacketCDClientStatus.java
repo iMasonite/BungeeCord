@@ -3,6 +3,7 @@ package net.md_5.bungee.protocol.packet;
 import io.netty.buffer.ByteBuf;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
+import net.md_5.bungee.protocol.packet.DefinedPacket;
 
 @ToString
 @EqualsAndHashCode(callSuper = false)
