@@ -1,3 +1,4 @@
+
 package net.md_5.bungee.protocol.packet;
 
 import io.netty.buffer.ByteBuf;
@@ -9,40 +10,35 @@ import net.md_5.bungee.protocol.packet.DefinedPacket;
 @Getter
 @ToString
 @EqualsAndHashCode(callSuper = false)
-public class Packet2Handshake extends DefinedPacket
-{
-
-    private byte procolVersion;
-    private String username;
-    private String host;
-    private int port;
-
-    private Packet2Handshake()
-    {
-        super( 0x02 );
-    }
-
-    @Override
-    public void read(ByteBuf buf)
-    {
-        procolVersion = buf.readByte();
-        username = readString( buf );
-        host = readString( buf );
-        port = buf.readInt();
-    }
-
-    @Override
-    public void write(ByteBuf buf)
-    {
-        buf.writeByte( procolVersion );
-        writeString( username, buf );
-        writeString( host, buf );
-        buf.writeInt( port );
-    }
-
-    @Override
-    public void handle(AbstractPacketHandler handler) throws Exception
-    {
-        handler.handle( this );
-    }
+public class Packet2Handshake extends DefinedPacket {
+	
+	private byte procolVersion;
+	private String username;
+	private String host;
+	private int port;
+	
+	private Packet2Handshake() {
+		super(0x02);
+	}
+	
+	@Override
+	public void read(ByteBuf buf) {
+		procolVersion = buf.readByte();
+		username = readString(buf);
+		host = readString(buf);
+		port = buf.readInt();
+	}
+	
+	@Override
+	public void write(ByteBuf buf) {
+		buf.writeByte(procolVersion);
+		writeString(username, buf);
+		writeString(host, buf);
+		buf.writeInt(port);
+	}
+	
+	@Override
+	public void handle(AbstractPacketHandler handler) throws Exception {
+		handler.handle(this);
+	}
 }

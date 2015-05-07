@@ -1,3 +1,4 @@
+
 package net.md_5.bungee.api.event;
 
 import lombok.Data;
@@ -11,25 +12,17 @@ import net.md_5.bungee.api.plugin.Event;
 @Data
 @ToString(callSuper = false)
 @EqualsAndHashCode(callSuper = false)
-public class ServerConnectEvent extends Event implements Cancellable
-{
-
-    /**
-     * Player connecting to a new server.
-     */
-    private final ProxiedPlayer player;
-    /**
-     * Server the player will be connected to.
-     */
-    private ServerInfo target;
-    /**
-     * Cancelled state.
-     */
-    private boolean cancelled;
-
-    public ServerConnectEvent(ProxiedPlayer player, ServerInfo target)
-    {
-        this.player = player;
-        this.target = target;
-    }
+public class ServerConnectEvent extends Event implements Cancellable {
+	
+	/** Player connecting to a new server. */
+	private final ProxiedPlayer player;
+	/** Server the player will be connected to. */
+	private ServerInfo target;
+	/** Cancelled state. */
+	private boolean cancelled;
+	
+	public ServerConnectEvent(ProxiedPlayer player, ServerInfo target) {
+		this.player = player;
+		this.target = target;
+	}
 }
